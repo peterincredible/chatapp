@@ -9,6 +9,7 @@ let mongoose = require("mongoose");
 let myevent = require("./server_helpers/event");
 let Chat = require("./models/chat");
 let User = require("./models/user");
+let path = require("path")
 app.use(cors());
 
 app.use(bodyparser.json());
@@ -107,7 +108,13 @@ socket.on("read_community",async (id)=>{
 
 
 })//end of the io event and socket connection life Cycle function
-
+//serve static assets if in production
+if(process.env.Node_ENV == "production"){
+    app.use(express.static("client/build"));
+    app.get("*",(req,res)=>{
+          res.sendFile(path.resolve(__dirname,"client","build","index.html"));
+    })
+}
 
 let port = process.env.PORT || process.env.MYPORT;
 mongoose.connect('mongodb://localhost/main_chat');

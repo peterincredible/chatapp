@@ -4,7 +4,9 @@
   "description": "a mern stack chatting app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"concurrently \"npm run server\"\"npm run client\"",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
@@ -18,5 +20,8 @@
     "jwt-decode": "^2.2.0",
     "mongoose": "^5.8.6",
     "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
   }
 }
