@@ -109,7 +109,7 @@ socket.on("read_community",async (id)=>{
 
 })//end of the io event and socket connection life Cycle function
 //serve static assets if in production
-if(process.env.Node_ENV == "production"){
+if(process.env.NODE_ENV == "production"){
     app.use(express.static("client/build"));
     app.get("*",(req,res)=>{
           res.sendFile(path.resolve(__dirname,"client","build","index.html"));
@@ -117,7 +117,14 @@ if(process.env.Node_ENV == "production"){
 }
 
 let port = process.env.PORT || process.env.MYPORT;
-mongoose.connect('mongodb://localhost/main_chat');
+if(process.env.PORT){
+    
+    mongoose.connect("mongodb://peterincredible:omolola3@ds041432.mlab.com:41432/heroku_pqn9r56d")
+  }else{
+    mongoose.connect('mongodb://localhost/main_chat');
+  }
+ 
+
 mongoose.connection.once("open",()=>{
     console.log("the database is opennn and working perfectly");
 })
