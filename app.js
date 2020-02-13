@@ -11,7 +11,7 @@ let Chat = require("./models/chat");
 let User = require("./models/user");
 let path = require("path")
 app.use(cors());
-
+require("dotenv").config();//this is wherre all the secret data not to be shared will be
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:false}));
 let privatesocket = {};//this would hold every new user socket for private messaging;
@@ -113,8 +113,6 @@ if(process.env.NODE_ENV == "production"){
     app.get("*",(req,res)=>{
           res.sendFile(path.resolve(__dirname,"client","build","index.html"));
     })
-}else{
-    require("dotenv").config();//this is wherre all the secret data not to be shared will be 
 }
 
 let port = process.env.PORT || process.env.MYPORT;
