@@ -1,0 +1,240 @@
+html,body,#root{
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgb(240, 228, 240);
+}
+.mk-flex{
+    display: flex;
+    flex-direction: row;
+}
+.flex-left{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    justify-content: flex-start;
+}
+.flex-right{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    justify-content: flex-end;
+}
+.mk-background{
+    background-color: purple;;
+}
+.mk-flex-col{
+    flex-direction: column;
+}
+.mk-flex-row{
+    flex-direction:row
+}
+.mk-flex-sa{
+    justify-content: space-around;
+}
+.mk-flex-bt{
+    justify-content:space-between;
+}
+.flex-nav{
+    flex-direction:row;
+    justify-content:space-between;
+    background-color: purple; 
+}
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+.mk-relative{
+    position: relative;
+}
+a{
+    text-decoration: none;
+}
+.nav-links{
+ color: white;
+ padding:10px;
+ display: inline-block;
+ font-weight: bold;
+ text-decoration-line: none;
+}
+.nav-links:hover,.nav-links:focus{
+    color: white;
+    text-decoration-line: none;
+   }
+.active-nav-links{
+    color: rgb(235, 223, 236);
+    
+}
+.nav-left{
+  margin-left:15px;
+}
+.nav-right{
+ margin-right:15px;
+}
+
+.flex-header{
+
+}
+.full-height{
+    height: 100%;
+}
+.flex-body{
+ flex-basis: 60%;
+ flex-grow:1;
+}
+.flex-footer{
+
+}
+.rm-padding-lr{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.rm-padding-tb{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.rm-margin-lr{
+    margin-left: 0;
+    margin-right: 0;
+}
+.rm-margin-tb{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+.home-background{
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://res.cloudinary.com/dflyjffzr/image/upload/v1578807840/priscilla-du-preez-BjhUu6BpUZA-unsplash_dnbhwo.jpg);
+}
+.submit-btn{
+    background-color: purple;
+    color:white;
+    transition: .40s all ease-in-out;
+}
+.submit-btn:hover{
+    background-color:rgb(240, 228, 240);
+    color:black;
+    border-color: purple;
+    
+    
+}
+.submit-btn:focus{
+    color:white;
+    border-color: black;
+}
+
+.spin-container{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chat-header{
+
+}
+.chat-body{
+    flex-grow: 1;
+  
+}
+.chat-footer{
+ flex-basis:1%;
+}
+.mk-overflow{
+    overflow:auto;
+}
+
+.span-ntf{
+    color:purple;
+    background-color: white;
+     width: 15px;
+     height: 15px;
+     border-radius: 10px;
+     margin-left: 10px;
+     padding:2px;
+    text-align: center;
+    font-weight: bold;
+}
+.left-message{
+    min-width: 80px;
+      
+    border-radius:0 18px 18px 18px;
+    padding: 10px 15px;
+   background-color: rgb(225, 233, 225);
+   position: relative;
+}
+.left-message:after{
+ content: "";
+ width: 0;
+ height: 0;
+
+ position: absolute;
+ left: 0px;
+ top: 0px;
+ border-left: 12px solid transparent;
+ border-top: 12px solid transparent;
+ border-bottom: 12px solid rgb(225, 233, 225);
+ border-right: 12px solid transparent;
+ margin-top: -24px;
+}
+
+
+.right-message{
+    min-width: 80px;
+ 
+    
+   border-radius:18px 18px 0 18px;
+   padding: 10px 15px;
+   background-color: purple;
+   color: white;
+   position: relative;
+}
+.right-message:after{
+content: "";
+width: 0;
+height: 0;
+
+position: absolute;
+right: 0;
+bottom: 0px;
+border-left: 12px solid transparent;
+border-top: 12px solid purple;
+border-bottom: 12px solid transparent;
+border-right: 12px solid transparent;
+margin-bottom: -24px;
+}
+.chatview-overflow{
+  overflow-y: auto;
+  overflow-x:hidden;
+}
+.sidebar-nav{
+    display:flex;
+    flex-direction: column;
+}
+.sidebar-nav li a.logout-btn{
+    color:white;
+}
+
+@media (max-width: 770px){
+    #wrapper{
+        overflow:hidden !important;
+    }
+    #sidebar-wrapper{
+        position:absolute !important;
+    }
+    #page-content-wrapper{
+        width:100% !important;
+        position:absolute !important;
+    }
+    
+}
+
