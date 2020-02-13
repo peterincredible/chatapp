@@ -18,11 +18,19 @@ let privatesocket = {};//this would hold every new user socket for private messa
 istyping ={}//for typing... notification
 let online =[];//this will hold every user that is online
 let allusers;// this will hold every user that went offline or logout
+
 app.use("/api",userRouter);
 
 app.get("/",async(req,res)=>{
    console.log("it worked");
 })
+
+if(process.env.NODE_ENV == "production"){
+    app.use(express.static("client/build"));
+    app.get("*",(req,res)=>{
+          res.sendFile(path.resolve(__dirname,"client","build","index.html"));
+    })
+}
 
     //fired when a new user Make a connection 
 io.on(myevent.connection, async (socket)=>{
@@ -108,12 +116,6 @@ socket.on("read_community",async (id)=>{
 
 })//end of the io event and socket connection life Cycle function
 //serve static assets if in production
-if(process.env.NODE_ENV == "production"){
-    app.use(express.static("client/build"));
-    app.get("*",(req,res)=>{
-          res.sendFile(path.resolve(__dirname,"client","build","index.html"));
-    })
-}
 
 let port = process.env.PORT || process.env.MYPORT;
 if(process.env.PORT){
@@ -129,5 +131,5 @@ mongoose.connection.once("open",()=>{
 })
 
 server.listen(port,()=>{
-    console.log(" SSS server listeining to port 4000");
+    console.log(" SSS server listeining to port "+port);
 }) 
