@@ -14,7 +14,6 @@ app.use(cors());
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:false}));
-require("dotenv").config();//this is wherre all the secret data not to be shared will be 
 let privatesocket = {};//this would hold every new user socket for private messaging;
 istyping ={}//for typing... notification
 let online =[];//this will hold every user that is online
@@ -114,6 +113,8 @@ if(process.env.NODE_ENV == "production"){
     app.get("*",(req,res)=>{
           res.sendFile(path.resolve(__dirname,"client","build","index.html"));
     })
+}else{
+    require("dotenv").config();//this is wherre all the secret data not to be shared will be 
 }
 
 let port = process.env.PORT || process.env.MYPORT;
