@@ -21,11 +21,11 @@ let allusers;// this will hold every user that went offline or logout
 
 app.use("/api",userRouter);
 
-app.get("/",async(req,res)=>{
-  // console.log("it worked");
-   //res.send({});
-   return;
-})
+/*app.get("/",async(req,res)=>{
+   console.log("it worked");
+   res.send({});
+  
+})*/
 
 if(process.env.NODE_ENV == "production"){
     app.use(express.static("client/build"));
