@@ -121,7 +121,7 @@ socket.on("read_community",async (id)=>{
 let port = process.env.PORT || process.env.MYPORT;
 if(process.env.PORT){
     
-    mongoose.connect("mongodb://peterincredible:omolola3@ds041432.mlab.com:41432/heroku_pqn9r56d")
+    mongoose.connect("mongodb://peterincredible2:omolola3@ds041432.mlab.com:41432/heroku_pqn9r56d")
   }else{
     mongoose.connect('mongodb://localhost/main_chat');
   }
