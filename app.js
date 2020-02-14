@@ -32,7 +32,7 @@ if(process.env.NODE_ENV == "production"){
           res.sendFile(path.resolve(__dirname,"client","build","index.html"));
     })
 }
-
+io.set('origins', '*:*');
     //fired when a new user Make a connection 
 io.on(myevent.connection, async (socket)=>{
      //event fired when user login 

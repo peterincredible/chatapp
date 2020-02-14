@@ -34,7 +34,8 @@ class ChatRoom extends React.Component{
     }
     async componentDidMount(){
             
-          let socket = io('http://localhost:4000');
+          //let socket = io('http://localhost:4000');
+          let socket = io();
           
           socket.on(event.socket_connect,()=>{
               console.log('client socket connected baby');
@@ -121,7 +122,7 @@ class ChatRoom extends React.Component{
                             />
                 
             </div>
-            <div id="page-content-wrapper" className=" rm-padding-lr rm-padding-tb" style={{height:"100%"}}>
+            <div id="page-content-wrapper" className="rm-padding-lr rm-padding-tb" style={{height:"100%"}}>
                 <div className="container-fluid full-height rm-padding-lr mk-flex mk-flex-col" >
                     <div className="row chat-header rm-margin-lr ">
                             <ChatHeader to={this.state.to} online={this.state.online} istyping={this.state.istyping} sidebarclick={this.sidebar}/>
