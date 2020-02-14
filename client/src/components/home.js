@@ -2,6 +2,7 @@ import React from "react"
 import Header from "./header";
 import {connect} from 'react-redux';
 import {addmessage} from '../client_helpers/action_helpers'
+import axios from "axios";
 
 
 class Home extends React.Component{
@@ -9,6 +10,7 @@ class Home extends React.Component{
      super(props)
  }
 async componentDidMount(){
+    let data = await axios.get("/");
      if(localStorage.user){
         this.props.history.push('/chatroom')
      }else{
