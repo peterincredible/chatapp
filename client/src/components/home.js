@@ -9,7 +9,7 @@ class Home extends React.Component{
  constructor(props){
      super(props)
  }
-async componentDidMount(){
+async componentWillMount(){
     let data = await axios.get("/");
      if(localStorage.user){
         this.props.history.push('/chatroom')
