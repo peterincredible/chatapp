@@ -10,7 +10,7 @@ class Home extends React.Component{
      super(props)
  }
 async componentWillMount(){
-    let data = await axios.get("/");
+    //let data = await axios.get("/");
      if(localStorage.user){
         this.props.history.push('/chatroom')
      }else{

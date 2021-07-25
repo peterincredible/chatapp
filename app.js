@@ -21,10 +21,6 @@ let allusers;// this will hold every user that went offline or logout
 
 app.use("/api",userRouter);
 
-/*app.get("/",async(req,res)=>{
-   res.send("it worked");
-  
-})*/
 
 if(process.env.NODE_ENV == "production"){
     app.use(express.static("client/build"));
@@ -121,7 +117,7 @@ socket.on("read_community",async (id)=>{
 let port = process.env.PORT || process.env.MYPORT;
 if(process.env.PORT){
     
-    mongoose.connect("mongodb://peterincredible2:omolola3@ds041432.mlab.com:41432/heroku_pqn9r56d")
+    mongoose.connect("mongodb+srv://peterincredible:<omolola1993>@cluster0.xjljq.mongodb.net/nodejs_chat_app?retryWrites=true&w=majority")
   }else{
     mongoose.connect('mongodb://localhost/main_chat');
   }

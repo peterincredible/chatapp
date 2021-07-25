@@ -1,6 +1,9 @@
 {
   "name": "chat_app",
   "version": "1.0.0",
+  "engines": {
+    "node": "v10.16.3"
+  },
   "description": "a mern stack chatting app",
   "main": "index.js",
   "scripts": {

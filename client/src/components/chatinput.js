@@ -60,6 +60,7 @@ class ChatInput extends Component{
                                           style={{resize:"none",flexGrow:1,overflowY:"auto"}}
                                          onKeyUp={this.keyup} className=""
                                          />
+                                        
                                     <input type="submit" value="submit" className="btn submit-btn"/>
                </form>
            </Fragment>
