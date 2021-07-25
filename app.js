@@ -9,6 +9,7 @@ let mongoose = require("mongoose");
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
 let myevent = require("./server_helpers/event");
 let Chat = require("./models/chat");
 let User = require("./models/user");
@@ -120,7 +121,7 @@ socket.on("read_community",async (id)=>{
 let port = process.env.PORT || process.env.MYPORT;
 if(process.env.PORT){
     
-    mongoose.connect("mongodb+srv://peterincredible:<omolola1993>@cluster0.xjljq.mongodb.net/nodejs_chat_app?retryWrites=true&w=majority")
+    mongoose.connect(`mongodb+srv://${process.env.MONGO_ATLAS_U}:${process.env.MONGO_ATLAS_P}@cluster0.xjljq.mongodb.net/nodejs_chat_app?retryWrites=true&w=majority`)
   }else{
     mongoose.connect('mongodb://localhost/main_chat');
   }
