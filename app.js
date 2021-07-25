@@ -119,11 +119,13 @@ socket.on("read_community",async (id)=>{
 //serve static assets if in production
 
 let port = process.env.PORT || process.env.MYPORT;
+console.log(process.env.MONGO_ATLAS_P + "yooo");
 if(process.env.PORT){
     
     mongoose.connect(`mongodb+srv://${process.env.MONGO_ATLAS_U}:${process.env.MONGO_ATLAS_P}@cluster0.xjljq.mongodb.net/nodejs_chat_app?retryWrites=true&w=majority`)
   }else{
     mongoose.connect('mongodb://localhost/main_chat');
+    //mongoose.connect(`mongodb+srv://${process.env.MONGO_ATLAS_U}:${process.env.MONGO_ATLAS_P}@cluster0.xjljq.mongodb.net/nodejs_chat_app?retryWrites=true&w=majority`)
   }
  
 
