@@ -121,11 +121,7 @@ socket.on("read_community",async (id)=>{
 let port = process.env.PORT || process.env.MYPORT;
 if(process.env.PORT){
     
-<<<<<<< HEAD
     mongoose.connect(`mongodb+srv://${process.env.MONGO_ATLAS_U}:${process.env.MONGO_ATLAS_P}@cluster0.xjljq.mongodb.net/nodejs_chat_app?retryWrites=true&w=majority`)
-=======
-    mongoose.connect("mongodb+srv://username:<password>@cluster0.xjljq.mongodb.net/nodejs_chat_app?retryWrites=true&w=majority")
->>>>>>> refs/remotes/origin/master
   }else{
     mongoose.connect('mongodb://localhost/main_chat');
   }
